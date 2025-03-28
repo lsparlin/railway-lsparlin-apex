@@ -1,0 +1,12 @@
+http {
+    map $host $env_redirect_to_domain {
+        # default $REDIRECT_TO_DOMAIN;
+        default www.lsparlin.dev;
+    }
+    server {
+      # server_name ${RAILWAY_PUBLIC_DOMAIN};
+      server_name ${REDIRECT_FROM_DOMAIN};
+      # rewrite ^/(.*)$ ${REDIRECT_TO_DOMAIN}/$1 permanent;
+      return 301 https://$env_redirect_to_domain/$request_uri;
+    }
+}
