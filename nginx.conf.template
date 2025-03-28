@@ -1,16 +1,6 @@
-user  nginx;
-worker_processes  auto;
-
-error_log  /var/log/nginx/error.log notice;
-pid        /var/run/nginx.pid;
-
-events {
-    worker_connections  1024;
-}
-
 http {
     map $host $env_redirect_to_domain {
-        # default $REDIRECT_TO_DOMAIN;
+        # default ${REDIRECT_TO_DOMAIN};
         default www.lsparlin.dev;
     }
     server {

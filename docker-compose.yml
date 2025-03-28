@@ -1,9 +1,0 @@
-web:
-  image: nginx
-  volumes:
-   - ./templates:/etc/nginx/templates
-  ports:
-   - "8080:80"
-  environment:
-   - REDIRECT_FROM_DOMAIN=lsparlin.dev
-   - REDIRECT_TO_DOMAIN=www.lsparlin.dev
