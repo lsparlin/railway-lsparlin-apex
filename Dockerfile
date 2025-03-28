@@ -1,5 +1,6 @@
 FROM nginx:alpine
 
+ENV NGINX_ENVSUBST_OUTPUT_DIR=/etc/nginx
+
 COPY site /usr/share/nginx/html
-# COPY nginx.conf /etc/nginx/nginx.conf
 COPY templates /etc/nginx/templates
